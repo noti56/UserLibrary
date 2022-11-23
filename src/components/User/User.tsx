@@ -31,7 +31,7 @@ const User = ({ user }: props) => {
           width={20}
           fill={"white"}
         />
-        <img className={styles.profilePicture} src={user.userImage} alt="user Image" />
+        <img className={styles.profilePicture} src={user.userImage} alt="user Image"/>
         <li>{user.name}</li>
         <li>{user.location}</li>
         <li>
