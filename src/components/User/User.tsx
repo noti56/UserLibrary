@@ -28,7 +28,7 @@ const User = ({ user }: props) => {
         <Pencil
           onClick={() => setToOpenModal(true)}
           className={styles.pencil}
-          width={30}
+          width={20}
           fill={"white"}
         />
         <img className={styles.profilePicture} src={user.userImage} alt="user Image" />

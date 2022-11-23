@@ -7,6 +7,9 @@ import { Audio } from "react-loader-spinner";
 import UsersWrapper from "./pages/Users/UsersWrapper";
 import Button from "./components/Button/Button";
 import AddNewUser from "./components/AddNewUser/AddNewUser";
+import Snackbar from "./components/Snackbar/Snackbar";
+import "animate.css";
+
 const App = () => {
   const dispatch = useAppDispatch();
 
@@ -23,9 +26,9 @@ const App = () => {
       }
     >
       <div className={styles.container}>
-        <div className={styles.addUserContainer}>
-          <AddNewUser />
-        </div>
+        <AddNewUser />
+        <Snackbar />
+
         <UsersWrapper />
       </div>
     </Suspense>

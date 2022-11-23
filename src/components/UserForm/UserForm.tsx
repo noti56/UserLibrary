@@ -34,7 +34,7 @@ const UserForm = ({
             inputType={input.inputType}
           />
         ))}
-        <Button disable={!isFormValid} onClick={onSubmit}>
+        <Button disable={!isFormValid} onClick={onSubmit} customStyles={{backgroundColor:"#2ecc71",fontSize:"larger",color:"white"}}>
           Submit
         </Button>
       </div>

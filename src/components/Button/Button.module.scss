@@ -4,8 +4,11 @@
   @include border-radius;
 //   width: 40%;
 //   height: 10%;
-
+border: 0;
   &:hover {
     @include buttonHoverStyle;
+  }
+  &:disabled{
+   background-color: lightgray !important;
   }
 }
