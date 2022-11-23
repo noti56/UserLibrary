@@ -1,0 +1,19 @@
+@import "./global.scss";
+@mixin genericContainer {
+  background-color: $pacific;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  @include genericContainer;
+  .addUserContainer{
+    position: absolute
+  }
+}
+.spinnerCotainer {
+  @include genericContainer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

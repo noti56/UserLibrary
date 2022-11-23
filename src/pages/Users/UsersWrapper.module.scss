@@ -1,0 +1,14 @@
+@import "../../global.scss";
+.usersWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  overflow-y: auto;
+  height: 100%;
+}
+
+@include for-phone-only {
+  .usersWrapper {
+    grid-template-columns: 1fr;
+  }
+} ;

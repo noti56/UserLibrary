@@ -1,0 +1,9 @@
+@import "../global.scss";
+.input {
+  @include border-radius;
+
+  padding: 5px;
+  outline: none;
+  border: 0px;
+  text-align: center;
+}

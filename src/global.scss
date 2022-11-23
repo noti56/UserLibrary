@@ -1,0 +1,18 @@
+$pacific: #2c3e50;
+$sun: #f1c40f;
+$concreate: #7f8c8d;
+$silver: #bdc3c7;
+@mixin buttonHoverStyle {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@mixin border-radius {
+  border-radius: 20px;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}

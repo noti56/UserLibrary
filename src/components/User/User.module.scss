@@ -1,0 +1,36 @@
+@import "../../global.scss";
+.container {
+  color: white;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  .list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .profilePicture {
+      border-radius: 50%;
+      max-width: 100px;
+    }
+    .pencil {
+      align-self: end;
+      &:hover {
+        @include buttonHoverStyle;
+      }
+    }
+    .mailLink {
+      text-decoration: none;
+      color: white;
+      &:hover {
+        @include buttonHoverStyle;
+        color: lightseagreen;
+      }
+    }
+  }
+}
+

@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { Suspense, useEffect } from "react";
+import Modal from "./components/Modal/Modal";
+import { useAppDispatch, useAppSelector } from "./store/hooks";
+import { fetchAllUsers } from "./store/slices/userSlice";
+import styles from "./App.module.scss";
+import { Audio } from "react-loader-spinner";
+import UsersWrapper from "./pages/Users/UsersWrapper";
+import Button from "./components/Button/Button";
+import AddNewUser from "./components/AddNewUser/AddNewUser";
+const App = () => {
+  const dispatch = useAppDispatch();
 
-function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    dispatch(fetchAllUsers());
+  }, []);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Suspense
+      fallback={
+        <div className={styles.spinnerCotainer}>
+          <Audio height="80" width="80" color="green" ariaLabel="loading" />
+        </div>
+      }
+    >
+      <div className={styles.container}>
+        <div className={styles.addUserContainer}>
+          <AddNewUser />
+        </div>
+        <UsersWrapper />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    </Suspense>
+  );
+};
 
-export default App
+export default App;
