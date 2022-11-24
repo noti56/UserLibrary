@@ -1,10 +1,15 @@
 @import "../../global.scss";
+$input-width: 155px;
 .usersWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   overflow-y: auto;
   height: 100%;
+  .inputContainer {
+    position: absolute;
+    right: calc(50% - $input-width / 2);
+  }
 }
 
 @include for-phone-only {
